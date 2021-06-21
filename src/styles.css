@@ -67,3 +67,15 @@ html {
   }
   
 /* Box sizing border box */
+
+:root {
+  font-size: 20px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}

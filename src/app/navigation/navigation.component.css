@@ -1,6 +1,5 @@
 .top-nav {
-  background-color: lightpink;
-  height: 2rem;
+  background-color: rgb(165, 154, 155);
   display: grid;
   align-content: center;
 }
@@ -13,4 +12,8 @@
 
 .nav-link {
   padding: 1rem;
+}
+
+.nav-link:hover {
+  background-color: rgb(216, 176, 176);
 }
