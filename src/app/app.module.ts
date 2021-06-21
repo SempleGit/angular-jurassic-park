@@ -7,6 +7,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { CharactersComponent } from './characters/characters.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { StoreComponent } from './store/store.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     MainPageComponent,
     SplashScreenComponent,
     CharactersComponent,
-    NavigationComponent
+    NavigationComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

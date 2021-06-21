@@ -1,0 +1,16 @@
+.top-nav {
+  background-color: lightpink;
+  height: 2rem;
+  display: grid;
+  align-content: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-link {
+  padding: 1rem;
+}
