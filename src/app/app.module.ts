@@ -8,6 +8,7 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { CharactersComponent } from './characters/characters.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { StoreComponent } from './store/store.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StoreComponent } from './store/store.component';
     SplashScreenComponent,
     CharactersComponent,
     NavigationComponent,
-    StoreComponent
+    StoreComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
