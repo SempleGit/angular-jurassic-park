@@ -10,3 +10,7 @@
   color: red;
   font-size: 2rem;
 }
+
+.splash-image {
+  cursor: pointer;
+}
