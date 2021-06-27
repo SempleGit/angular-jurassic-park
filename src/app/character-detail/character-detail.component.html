@@ -1,0 +1,9 @@
+<div *ngIf="character">
+  <section class="bio">
+    <h2>{{character.name | titlecase}}</h2>
+    <div *ngIf="character.img">
+      <img src={{character.img}} alt={{character.alt}}>
+    </div>
+    <p>{{character.bio}}</p>
+  </section>
+</div>
