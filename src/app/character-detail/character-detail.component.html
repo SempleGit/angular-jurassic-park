@@ -1,4 +1,4 @@
-<div *ngIf="character">
+<div *ngIf="character; else elseBlock"> 
   <section class="bio">
     <h2>{{character.name | titlecase}}</h2>
     <div *ngIf="character.img">
@@ -6,4 +6,6 @@
     </div>
     <p>{{character.bio}}</p>
   </section>
+  <button routerLink="/characters">Return</button>
 </div>
+<ng-template #elseBlock>Detail not found.</ng-template>

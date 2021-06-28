@@ -20,6 +20,12 @@ export class InMemoryDataService implements InMemoryDbService {
         img: '../../assets/images/EllieSattler.jpg',
         alt: 'Dr. Sattler standing in a field'
       },
+      { id: 13, 
+        name: 'Owen Grady', 
+        bio: 'Owen Grady is an animal behaviorist who was employed by Jurassic World as a Velociraptor trainer. After the fall of Jurassic World in 2015, Grady briefly entered a relationship with Claire Dearing, the former park manager of Jurassic World.[1] However this did not last and Owen would later go off to live on his own in Northern California. Dearing would later recruit him to help save Blue, a raptor he raised, from the eruption of Mt. Sibo. Owen would later participate in an incident at Lockwood Manor in which he witnessed dinosaurs being released into the wider world.', //Wiki
+        img: '../../assets/images/OwenGrady.jpg',
+        alt: 'Owen Grady looking determined'
+      },
     ];
     return {characters};
   }
