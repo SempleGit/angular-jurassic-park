@@ -11,12 +11,14 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 11, 
         name: 'Dr. Alan Grant', 
         bio: 'Alan Grant is one of the main characters in the Jurassic Park franchise and the main protagonist in the first Jurassic Park and Jurassic Park III. He is a paleontologist who was invited by John Hammond to his dinosaur park, Jurassic Park. Alan is portrayed very differently over the various canons.', //Wikipedia
-        img: "../../assets/images/Alangrant.jpg",
-        alt: "Headshot of Dr. Alan Grant."
+        img: '../../assets/images/Alangrant.jpg',
+        alt: 'Headshot of Dr. Alan Grant'
       },
       { id: 12, 
         name: 'Dr. Ellie Sattler', 
-        bio: 'Ellen "Ellie" Sattler is the only child of Terry and Diane Sattler. She was a graduate student at the Snakewater dig site. Her professor was Dr. Alan Grant. She was a paleobotanist, a paleontologist who specializes in the study of prehistoric plants. She was 24 years old and darkly tanned, most likely due to sun exposure during her digs. She was engaged to Dr. Reiman, a physicist from Berkeley.' //Wiki
+        bio: 'Ellen "Ellie" Sattler is the only child of Terry and Diane Sattler. She was a graduate student at the Snakewater dig site. Her professor was Dr. Alan Grant. She was a paleobotanist, a paleontologist who specializes in the study of prehistoric plants. She was 24 years old and darkly tanned, most likely due to sun exposure during her digs. She was engaged to Dr. Reiman, a physicist from Berkeley.', //Wiki
+        img: '../../assets/images/EllieSattler.jpg',
+        alt: 'Dr. Sattler standing in a field'
       },
     ];
     return {characters};
