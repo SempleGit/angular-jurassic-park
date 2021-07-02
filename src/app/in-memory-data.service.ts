@@ -12,19 +12,22 @@ export class InMemoryDataService implements InMemoryDbService {
         name: 'Dr. Alan Grant', 
         bio: 'Alan Grant is one of the main characters in the Jurassic Park franchise and the main protagonist in the first Jurassic Park and Jurassic Park III. He is a paleontologist who was invited by John Hammond to his dinosaur park, Jurassic Park. Alan is portrayed very differently over the various canons.', //Wikipedia
         img: './assets/images/Alangrant.jpg',
-        alt: 'Headshot of Dr. Alan Grant'
+        alt: 'Headshot of Dr. Alan Grant',
+        figcaption: 'Headshot of Dr. Alan Grant.'
       },
       { id: 12, 
         name: 'Dr. Ellie Sattler', 
         bio: 'Ellen "Ellie" Sattler is the only child of Terry and Diane Sattler. She was a graduate student at the Snakewater dig site. Her professor was Dr. Alan Grant. She was a paleobotanist, a paleontologist who specializes in the study of prehistoric plants. She was 24 years old and darkly tanned, most likely due to sun exposure during her digs. She was engaged to Dr. Reiman, a physicist from Berkeley.', //Wiki
         img: './assets/images/EllieSattler.jpg',
-        alt: 'Dr. Sattler standing in a field'
+        alt: 'Dr. Sattler standing in a field',
+        figcaption: 'Dr. Sattler standing in an open during a tour of Jurassic Park.'
       },
       { id: 13, 
         name: 'Owen Grady', 
         bio: 'Owen Grady is an animal behaviorist who was employed by Jurassic World as a Velociraptor trainer. After the fall of Jurassic World in 2015, Grady briefly entered a relationship with Claire Dearing, the former park manager of Jurassic World.[1] However this did not last and Owen would later go off to live on his own in Northern California. Dearing would later recruit him to help save Blue, a raptor he raised, from the eruption of Mt. Sibo. Owen would later participate in an incident at Lockwood Manor in which he witnessed dinosaurs being released into the wider world.', //Wiki
         img: './assets/images/OwenGrady.jpg',
-        alt: 'Owen Grady looking determined'
+        alt: 'Owen Grady looking determined',
+        figcaption: 'Owen Grady preparing to rescue the island in Jurassic World.'
       },
     ];
     return {characters};

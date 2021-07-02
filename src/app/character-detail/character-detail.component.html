@@ -2,7 +2,10 @@
   <section class="bio">
     <h2>{{character.name | titlecase}}</h2>
     <div *ngIf="character.img">
-      <img src={{character.img}} alt={{character.alt}}>
+      <figure class="figure">
+        <img class="figure-img img-fluid rounded" src={{character.img}} alt={{character.alt}}>
+        <figcaption class="figure-caption text-end">{{character.figcaption}}</figcaption>
+      </figure>
     </div>
     <p>{{character.bio}}</p>
   </section>

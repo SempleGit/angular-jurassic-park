@@ -4,4 +4,5 @@ export interface Character {
   bio: string;
   img: string;
   alt: string;
+  figcaption: string;
 }
