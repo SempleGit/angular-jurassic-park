@@ -1,9 +1,10 @@
 <app-navigation></app-navigation>
-<p>store works!</p>
-<div class="container-fluid">
-  <ul>
-    <li *ngFor="let shopItem of shopItems">
-      <a routerLink="/details/{{shopItem.id}}">{{shopItem.itemName}}</a>
+  <h2>Jurassic Park Shop</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let shopItem of shopItems">
+        <a routerLink="/details/{{shopItem.id}}">
+          <img class="thumbnail" src="../../assets/images/shopItems/jpT.jfif">
+          {{shopItem.itemName}}
+        </a>
     </li>
   </ul>
-</div>
