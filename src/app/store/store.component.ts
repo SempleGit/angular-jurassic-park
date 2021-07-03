@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopItemsService } from '../shop-items.service';
+import { ShopItems } from '../shop-items';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-store',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
 
-  constructor() { }
+  shopItems: ShopItems[] = [];
+  constructor(private shopItemService: ShopItemsService) { }
 
   ngOnInit(): void {
+  }
+
+  getShopItems(): void {
+    this.shopItemService.getShopItems().subscribe(shopItems => this.shopItems = shopItems);
   }
 
 }
