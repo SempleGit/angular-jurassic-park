@@ -1,2 +1,9 @@
 <app-navigation></app-navigation>
 <p>store works!</p>
+<div class="container-fluid">
+  <ul>
+    <li *ngFor="let shopItem of shopItems">
+      <a routerLink="/details/{{shopItem.id}}">{{shopItem.itemName}}</a>
+    </li>
+  </ul>
+</div>

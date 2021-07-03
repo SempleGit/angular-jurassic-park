@@ -14,6 +14,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { ShopItemDetailComponent } from './shop-item-detail/shop-item-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     NavigationComponent,
     StoreComponent,
     PageNotFoundComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    ShopItemDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopItemsService } from '../shop-items.service';
 import { ShopItems } from '../shop-items';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-store',
@@ -14,6 +13,7 @@ export class StoreComponent implements OnInit {
   constructor(private shopItemService: ShopItemsService) { }
 
   ngOnInit(): void {
+    this.getShopItems();
   }
 
   getShopItems(): void {

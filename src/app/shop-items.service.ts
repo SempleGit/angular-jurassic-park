@@ -6,11 +6,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ShopItemsService {
 
   constructor(private http: HttpClient) { }
 
-  private shopItemsUrl = 'api/shop-items';
+  private shopItemsUrl = 'api/shopItems';
 
   getShopItems(): Observable<ShopItems[]> {
     return this.http.get<ShopItems[]>(this.shopItemsUrl);
