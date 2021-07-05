@@ -43,6 +43,35 @@ export class InMemoryDataService implements InMemoryDbService {
         img: './assets/images/shopItems/jpT.jfif',
         alt: 'Heather Grey Jurassic Park T-Shirt',
       },
+      {
+        id: 12,
+        itemName: 'Jurassic World 5-Movie Collection',
+        price: 31.99,
+        img: './assets/images/shopItems/jpBluRay.jpg',
+        alt: 'Blu-Ray collection cover art for the 5 Jurassic World Movies',
+      },
+      {
+        id: 13,
+        itemName: 'Jurassic World Pajama Pants',
+        price: 21.99,
+        img: './assets/images/shopItems/jpPants.jpg',
+        alt: 'Pajama Pants with Jurassic Park logo',
+      },
+      {
+        id: 14,
+        itemName: 'Jurassic Park: A Novel',
+        price: 14.99,
+        img: './assets/images/shopItems/jpBookCover.jpg',
+        alt: 'Jurassic Park Novel Cover Art',
+      },
+      {
+        id: 15,
+        itemName: 'Jurassic World Pajama Pants',
+        price: 21.99,
+        img: './assets/images/shopItems/jpPants.jpg',
+        alt: 'Pajama Pants with Jurassic Park logo',
+      },
+
     ];
 
     return {characters, shopItems};

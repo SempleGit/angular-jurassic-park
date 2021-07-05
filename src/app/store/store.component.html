@@ -3,8 +3,10 @@
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let shopItem of shopItems">
         <a routerLink="/details/{{shopItem.id}}">
-          <img class="thumbnail" src="../../assets/images/shopItems/jpT.jfif">
+          <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
           {{shopItem.itemName}}
         </a>
+        <p>{{shopItem.price}}</p>
+        <button>Add to cart</button>
     </li>
   </ul>

@@ -5,9 +5,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" routerLink="/main">Main</a>
-          <a class="nav-link" routerLink="/characters">Characters</a>
-          <a class="nav-link" routerLink="/store">Store</a>
+          <a class="nav-link" [class.active]="'main' === selectedLink" aria-current="page" routerLink="/main">Main</a>
+          <a class="nav-link" [class.active]="'characters' === selectedLink" routerLink="/characters">Characters</a>
+          <a class="nav-link" [class.active]="'store' === selectedLink" routerLink="/store">Store</a>
         </div>
     </div>
   </div>
