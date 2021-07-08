@@ -23,7 +23,7 @@ export class InMemoryDataService implements InMemoryDbService {
         bio: 'Ellen "Ellie" Sattler is the only child of Terry and Diane Sattler. She was a graduate student at the Snakewater dig site. Her professor was Dr. Alan Grant. She was a paleobotanist, a paleontologist who specializes in the study of prehistoric plants. She was 24 years old and darkly tanned, most likely due to sun exposure during her digs. She was engaged to Dr. Reiman, a physicist from Berkeley.', //Wiki
         img: './assets/images/characters/EllieSattler.jpg',
         alt: 'Dr. Sattler standing in a field',
-        figcaption: 'Dr. Sattler standing in an open during a tour of Jurassic Park.'
+        figcaption: 'Dr. Sattler standing in an open field during a tour of Jurassic Park.'
       },
       { 
         id: 13, 

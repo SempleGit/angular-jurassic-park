@@ -1,1 +1,15 @@
-<p>shop-item-detail works!</p>
+<div *ngIf='shopItem'>
+  <div class="container-fluid">
+    <h2>{{shopItem.itemName}}</h2>
+    <img class="img-fluid" src={{shopItem.img}} alt={{shopItem.alt}}>
+    <p>{{shopItem.price}}</p>
+  </div>
+</div>
+
+<!-- export interface ShopItems {
+  id: number;
+  itemName: string;
+  price: number;
+  img: string;
+  alt: string;  
+} -->

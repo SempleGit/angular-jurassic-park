@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ShopItems } from '../shop-items';
+import { ActivatedRoute } from '@angular/router';
+import { ShopItemsService } from '../shop-items.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-shop-item-detail',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopItemDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() shopItem?: ShopItems;
+
+  constructor(
+    private route: ActivatedRoute,
+    private shopItemsService: ShopItemsService
+    ) { }
 
   ngOnInit(): void {
+    this.getShopItem();
+  }
+
+  getShopItem(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.shopItemsService.getShopItem(id).subscribe(shopItem => this.shopItem = shopItem);
   }
 
 }

@@ -1,14 +1,16 @@
 <div *ngIf="character; else elseBlock"> 
-  <section class="bio">
-    <h2>{{character.name | titlecase}}</h2>
-    <div *ngIf="character.img">
-      <figure class="figure">
-        <img class="figure-img img-fluid rounded" src={{character.img}} alt={{character.alt}}>
-        <figcaption class="figure-caption text-end">{{character.figcaption}}</figcaption>
-      </figure>
-    </div>
-    <p>{{character.bio}}</p>
-  </section>
-  <button type="button" class="btn btn-primary" routerLink="/characters">Return</button>
+  <div class="container-fluid">
+    <section class="bio">
+      <h2>{{character.name | titlecase}}</h2>
+      <div *ngIf="character.img">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded" src={{character.img}} alt={{character.alt}}>
+          <figcaption class="figure-caption text-end">{{character.figcaption}}</figcaption>
+        </figure>
+      </div>
+      <p>{{character.bio}}</p>
+    </section>
+    <button type="button" class="btn btn-primary" routerLink="/characters">Return</button>
+  </div>
 </div>
 <ng-template #elseBlock>Detail not found.</ng-template>
