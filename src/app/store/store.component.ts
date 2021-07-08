@@ -9,6 +9,7 @@ import { ShopItems } from '../shop-items';
 })
 export class StoreComponent implements OnInit {
 
+  link = 'store';
   shopItems: ShopItems[] = [];
   constructor(private shopItemService: ShopItemsService) { }
 

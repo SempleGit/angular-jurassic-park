@@ -11,6 +11,7 @@ import { CharacterService } from '../character.service';
 })
 export class CharactersComponent implements OnInit {
 
+  link = 'characters';
   characters: Character[] = [];
   constructor(private characterService: CharacterService) { }
 
