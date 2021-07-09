@@ -5,9 +5,10 @@
     <li class="list-group-item" *ngFor="let shopItem of shopItems">
         <a routerLink="/details/{{shopItem.id}}">
           <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
-          {{shopItem.itemName}}
+          <p>{{shopItem.itemName}}</p>
         </a>
-        <p>{{shopItem.price}}</p>
+        <p>{{shopItem.description}}</p>
+        <p>${{shopItem.price}}</p>
         <button class="btn btn-outline-primary">Add to cart</button>
     </li>
   </ul>

@@ -15,7 +15,8 @@ export class ShopItemDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private shopItemsService: ShopItemsService
+    private shopItemsService: ShopItemsService,
+    private location: Location
     ) { }
 
   ngOnInit(): void {
@@ -25,6 +26,10 @@ export class ShopItemDetailComponent implements OnInit {
   getShopItem(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.shopItemsService.getShopItem(id).subscribe(shopItem => this.shopItem = shopItem);
+  }
+
+  returnToShop(): void {
+    this.location.back();
   }
 
 }
