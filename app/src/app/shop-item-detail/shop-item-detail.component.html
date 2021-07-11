@@ -1,0 +1,21 @@
+<div *ngIf='shopItem'>
+  <div class="container shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="container" (click)="returnToShop()">
+      <h2>{{shopItem.itemName}}</h2>
+      <figure class="figure">
+        <img class="img-fluid" src={{shopItem.img}} alt={{shopItem.alt}}>
+        <figcaption class="figure-caption text-end">{{shopItem.description}}</figcaption>
+      </figure>
+      <p>${{shopItem.price}}</p>
+    </div>
+    <button class="btn btn-outline-primary">Add to cart</button>
+  </div>
+</div>
+
+<!-- export interface ShopItems {
+  id: number;
+  itemName: string;
+  price: number;
+  img: string;
+  alt: string;  
+} -->

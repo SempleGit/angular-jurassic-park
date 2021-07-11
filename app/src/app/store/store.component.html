@@ -1,0 +1,15 @@
+<app-navigation [selectedLink]="link"></app-navigation>
+<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+  <h2>Jurassic Park Shop</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let shopItem of shopItems">
+        <a routerLink="/details/{{shopItem.id}}">
+          <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
+          <p>{{shopItem.itemName}}</p>
+        </a>
+        <p>{{shopItem.description}}</p>
+        <p>${{shopItem.price}}</p>
+        <button class="btn btn-outline-primary">Add to cart</button>
+    </li>
+  </ul>
+</div>
