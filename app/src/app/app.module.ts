@@ -12,8 +12,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { ShopItemDetailComponent } from './shop-item-detail/shop-item-detail.component';
 
 @NgModule({
@@ -32,7 +30,7 @@ import { ShopItemDetailComponent } from './shop-item-detail/shop-item-detail.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

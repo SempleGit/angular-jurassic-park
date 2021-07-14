@@ -11,7 +11,7 @@ export class ShopItemsService {
 
   constructor(private http: HttpClient) { }
 
-  private shopItemsUrl = 'api/shopItems';
+  private shopItemsUrl = 'api/shopitems';
 
   getShopItems(): Observable<ShopItems[]> {
     return this.http.get<ShopItems[]>(this.shopItemsUrl);
@@ -22,3 +22,4 @@ export class ShopItemsService {
     return this.http.get<ShopItems>(url);
   }
 }
+
