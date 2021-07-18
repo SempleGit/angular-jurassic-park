@@ -13,6 +13,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 
 import { HttpClientModule } from '@angular/common/http';
 import { ShopItemDetailComponent } from './shop-item-detail/shop-item-detail.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShopItemDetailComponent } from './shop-item-detail/shop-item-detail.com
     StoreComponent,
     PageNotFoundComponent,
     CharacterDetailComponent,
-    ShopItemDetailComponent
+    ShopItemDetailComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
