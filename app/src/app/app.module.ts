@@ -14,6 +14,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 import { HttpClientModule } from '@angular/common/http';
 import { ShopItemDetailComponent } from './shop-item-detail/shop-item-detail.component';
 import { CartComponent } from './cart/cart.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,13 @@ import { CartComponent } from './cart/cart.component';
     PageNotFoundComponent,
     CharacterDetailComponent,
     ShopItemDetailComponent,
-    CartComponent
+    CartComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

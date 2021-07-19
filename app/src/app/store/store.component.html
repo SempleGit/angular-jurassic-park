@@ -9,7 +9,7 @@
         </a>
         <p>{{shopItem.description}}</p>
         <p>${{shopItem.price}}</p>
-        <button class="btn btn-outline-primary" (click)="addToCart()">Add to cart</button>
+        <app-add-to-cart [item] = "shopItem"></app-add-to-cart>
     </li>
   </ul>
 </div>
