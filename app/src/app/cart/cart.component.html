@@ -1,5 +1,15 @@
 <app-navigation [selectedLink]="link"></app-navigation>
-<p>cart works!</p>
-<ng-container *ngFor='let item of cartItems'>
-  <div class="row">{{item.itemName}}</div>
-</ng-container>
+<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+  <h2>Shopping Cart</h2>
+  <ng-container *ngFor='let shopItem of cartItems'>
+    <div class="row">
+      <a routerLink="/details/{{shopItem.id}}">
+        <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
+        <p>{{shopItem.itemName}}</p>
+      </a>
+        <p>{{shopItem.description}}</p>
+        <p>${{shopItem.price}}</p>
+        <p>Quantity: {{shopItem.quantity}}</p>
+    </div>
+  </ng-container>
+</div>

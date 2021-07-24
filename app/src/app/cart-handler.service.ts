@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ShopItems } from './shop-items';
+import { CartItems } from './cart-items';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -30,9 +31,9 @@ export class CartHandlerService {
     console.log(`clear cart:`);
   }
 
-  getCart(): Observable<ShopItems[]> {
+  getCart(): Observable<CartItems[]> {
     console.log(`get cart:`);
-    return this.http.post<ShopItems[]>(this.getCartUrl, {});
+    return this.http.post<CartItems[]>(this.getCartUrl, {});
   }  
 
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShopItems } from '../shop-items';
+import { CartItems } from '../cart-items';
 import { CartHandlerService } from '../cart-handler.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +10,7 @@ import { Observable } from 'rxjs';
 export class CartComponent implements OnInit {
 
   link = 'cart';
-  cartItems: ShopItems[] = [];
+  cartItems: CartItems[] = [];
   constructor(private cartHandler: CartHandlerService) { }
 
   ngOnInit(): void {
