@@ -1,2 +1,5 @@
 <app-navigation [selectedLink]="link"></app-navigation>
 <p>cart works!</p>
+<ng-container *ngFor='let item of cartItems'>
+  <div class="row">{{item.itemName}}</div>
+</ng-container>

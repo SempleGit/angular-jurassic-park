@@ -11,13 +11,15 @@ import { Observable } from 'rxjs';
 export class CartComponent implements OnInit {
 
   link = 'cart';
-
+  cartItems: ShopItems[] = [];
   constructor(private cartHandler: CartHandlerService) { }
 
   ngOnInit(): void {
+    this.getCartItems();
   }
 
-  getCartItems() {
+  getCartItems(): void {
+    this.cartHandler.getCart().subscribe(items => this.cartItems = items);
   }
 
 }
