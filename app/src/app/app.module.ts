@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShopItemDetailComponent } from './shop-item-detail/shop-item-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { RemoveFromCartComponent } from './remove-from-cart/remove-from-cart.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
     CharacterDetailComponent,
     ShopItemDetailComponent,
     CartComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    RemoveFromCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

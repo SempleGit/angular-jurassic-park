@@ -7,9 +7,16 @@
         <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
         <p>{{shopItem.itemName}}</p>
       </a>
-        <p>{{shopItem.description}}</p>
         <p>${{shopItem.price}}</p>
-        <p>Quantity: {{shopItem.quantity}}</p>
+        <div class="container">
+          <!-- <app-add-to-cart [item] = "shopItem"></app-add-to-cart> -->
+          <button class="btn btn-outline-primary" (click)="addToCart(shopItem)">Add</button>
+          <button class="btn btn-outline-primary" (click)="removeOneFromCart(shopItem)">Remove</button>
+          <ng-container *ngIf='shopItem.quantity'>
+            <p>Quantity: {{shopItem.quantity}}</p>
+          </ng-container>
+        </div>
     </div>
   </ng-container>
+  <button (click)="clearCart()">Clear</button>
 </div>

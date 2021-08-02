@@ -7,15 +7,10 @@
         <figcaption class="figure-caption text-end">{{shopItem.description}}</figcaption>
       </figure>
       <p>${{shopItem.price}}</p>
+      <ng-container *ngIf='shopItem.quantity'>
+        <p>Quantity: {{shopItem.quantity}}</p>
+      </ng-container>
     </div>
     <app-add-to-cart [item] = "shopItem"></app-add-to-cart>
   </div>
 </div>
-
-<!-- export interface ShopItems {
-  id: number;
-  itemName: string;
-  price: number;
-  img: string;
-  alt: string;  
-} -->

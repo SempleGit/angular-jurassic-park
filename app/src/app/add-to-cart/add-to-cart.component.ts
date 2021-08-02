@@ -9,11 +9,15 @@ import { CartHandlerService } from '../cart-handler.service';
 })
 export class AddToCartComponent implements OnInit {
 
-  @Input() item?: ShopItems;
+  @Input() item?: ShopItems; 
   
   constructor(private cartHandler: CartHandlerService) { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(): void {
+    this.cartHandler.getCart();
   }
 
   addToCart(): void {

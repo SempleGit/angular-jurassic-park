@@ -10,6 +10,10 @@
         <p>{{shopItem.description}}</p>
         <p>${{shopItem.price}}</p>
         <app-add-to-cart [item] = "shopItem"></app-add-to-cart>
+        <app-remove-from-cart [item] = "shopItem"></app-remove-from-cart>
+        <ng-container *ngIf='shopItem.quantity'>
+          <p>Quantity: {{shopItem.quantity}}</p>
+        </ng-container>
     </li>
   </ul>
 </div>
