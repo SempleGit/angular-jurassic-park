@@ -17,6 +17,8 @@ export class CartComponent implements OnInit {
     this.getCartItems();
   }
 
+  
+
   getCartItems(): void {
     this.cartHandler.getCart().subscribe(items => this.cartItems = items);
   }

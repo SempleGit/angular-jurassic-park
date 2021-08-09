@@ -11,25 +11,10 @@
         <p>${{shopItem.price}}</p>
         <app-add-to-cart [item] = "shopItem"></app-add-to-cart>
         <app-remove-from-cart [item] = "shopItem"></app-remove-from-cart>
-        <ng-container *ngIf='shopItem.quantity'>
+        <!-- <ng-container *ngIf='shopItem.quantity'>
           <p>Quantity: {{shopItem.quantity}}</p>
-        </ng-container>
+        </ng-container> -->
+        <app-item-quantity [shopItem] = "shopItem"></app-item-quantity>
     </li>
   </ul>
-</div>
-<div class="container shadow-lg p-3 mb-5 bg-body rounded">
-  <h2>Store</h2>
-  <ng-container *ngFor="let shopItem of shopItems; index as i">
-    <div class="row">
-      <div class="col" >
-        <a routerLink="/details/{{shopItem.id}}">
-          <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
-          <p>{{shopItem.itemName}}</p>
-        </a>
-        <p>{{shopItem.description}}</p>
-        <p>${{shopItem.price}}</p>
-        <app-add-to-cart [item] = "shopItem"></app-add-to-cart>
-      </div>
-    </div>
-  </ng-container>
 </div>

@@ -1,0 +1,9 @@
+.character-thumbnail {
+  background-color: black;
+  width: 3rem;
+  height: 3rem;
+  display: inline-block; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: .5rem;
+}

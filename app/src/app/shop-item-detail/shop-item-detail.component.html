@@ -7,10 +7,8 @@
         <figcaption class="figure-caption text-end">{{shopItem.description}}</figcaption>
       </figure>
       <p>${{shopItem.price}}</p>
-      <ng-container *ngIf='shopItem.quantity'>
-        <p>Quantity: {{shopItem.quantity}}</p>
-      </ng-container>
     </div>
     <app-add-to-cart [item] = "shopItem"></app-add-to-cart>
+    <app-item-quantity [shopItem] = "shopItem"></app-item-quantity>
   </div>
 </div>

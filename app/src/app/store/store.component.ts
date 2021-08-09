@@ -17,7 +17,7 @@ export class StoreComponent implements OnInit {
     this.getShopItems();
   }
 
-  getShopItems(): void {
+  getShopItems = (): void => {
     this.shopItemService.getShopItems().subscribe(shopItems => this.shopItems = shopItems);
   }
 

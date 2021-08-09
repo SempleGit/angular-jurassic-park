@@ -16,10 +16,6 @@ export class AddToCartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngOnChanges(): void {
-    this.cartHandler.getCart();
-  }
-
   addToCart(): void {
     this.cartHandler.addToCart(this.item);
   }
