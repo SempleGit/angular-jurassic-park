@@ -12,9 +12,10 @@
           <!-- <app-add-to-cart [item] = "shopItem"></app-add-to-cart> -->
           <button class="btn btn-outline-primary" (click)="addToCart(shopItem)">Add</button>
           <button class="btn btn-outline-primary" (click)="removeOneFromCart(shopItem)">Remove</button>
-          <ng-container *ngIf='shopItem.quantity'>
+          <!-- <ng-container *ngIf='shopItem.quantity'>
             <p>Quantity: {{shopItem.quantity}}</p>
-          </ng-container>
+          </ng-container> -->
+          <app-item-quantity [quantity] = "shopItem.quantity"></app-item-quantity>
         </div>
     </div>
   </ng-container>

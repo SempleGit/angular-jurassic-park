@@ -15,7 +15,9 @@ export class CartHandlerService {
   private clearCartUrl = 'api/clearCart';
   private getCartUrl = 'api/getCartItems';
 
-  addToCart(item?: ShopItems): void {
+  addToCart(item?: ShopItems): void;
+  addToCart(item?: number): void;
+  addToCart(item?: any): void {
     this.http.post(this.addToCartUrl, item).subscribe();
   }
   

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShopItems } from '../shop-items';
 
 @Component({
   selector: 'app-item-quantity',
@@ -8,14 +7,7 @@ import { ShopItems } from '../shop-items';
 })
 export class ItemQuantityComponent implements OnInit {
 
-  @Input() shopItem: ShopItems = {
-      id: 1,
-      itemName: '',
-      price: 0,
-      description: '',
-      img: '',
-      alt: '',
-    };
+  @Input() quantity?: number;
   constructor() { }
 
   ngOnInit(): void {

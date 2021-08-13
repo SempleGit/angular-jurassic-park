@@ -28,7 +28,11 @@ export class CartComponent implements OnInit {
     this.getCartItems();
   }
 
-  addToCart(item: ShopItems): void {
+  addToCart(item: ShopItems): void;
+  
+  addToCart(item: number): void;
+  
+  addToCart(item: any){
     this.cartHandler.addToCart(item);
     this.getCartItems();
   }

@@ -2,25 +2,43 @@ const http = require('http');
 const port = 3000;
 
 const express = require('express');
+const session = require('express-session');
 const app = express();
+const shopItems = require('./shopItems');
+const cart = require('./cart');
+const characters = require('./characters');
+
 // For parsing application/json
 app.use(express.json());
-  
+
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const characters = require('./characters');
-const shopItems = require('./shopItems');
-const cart = require('./cart');
+//setting up the session
+app.use(session({
+  secret: 'session secret',
+  cookie: { maxAge: 1000 * 60 * 10 }, // Final number is how many minutes the session stays open, 10 is 10 minutes.
+  saveUninitialized: true,
+  resave: false
+}));
 
 http.createServer(app).listen(port);
 
 app.get('/shopItems', (req, res) => {
-  res.json(shopItems);
+  const sess = req.session;
+  if (!sess.user) {
+    sess.shopItems = shopItems();
+    // sess.cartItems = [];
+    // sess.cart = require('./cart')(sess.shopItems);
+    sess.user = 'Random User';
+  }
+  console.log(req.session);
+  // req.session.save();
+  res.json(req.session.shopItems);
 });
 
 app.get('/shopItems/:id', (req, res) => {
-  res.json(shopItems.find(item => item.id === Number(req.params.id)) || {"itemName": "Item Not Found"});
+  res.json(req.session.shopItems.find(item => item.id === Number(req.params.id)) || {"itemName": "Item Not Found"});
 });
 
 app.get('/characters', (req, res) => {
@@ -32,23 +50,31 @@ app.get('/characters/:id', (req, res) => {
 });
 
 app.post('/addToCart', (req, res) => {
-  console.log("node add");
-  cart.addToCart(req.body);
-
-  res.json(cart.getItems());
+  const updateCart = cart(req.session.shopItems, req.session.cart);
+  req.session.cart = updateCart.addToCart(req.body);
+  res.end();
 });
 
 app.post('/removeOneFromCart', (req, res) => {
-  cart.removeOneFromCart(req.body);
-  res.json(cart.getItems());
+  const updateCart = cart(req.session.shopItems, req.session.cart);
+
+  updateCart.removeOneFromCart(req.body);
+  // req.session.cart.removeOneFromCart(req.body);
+  res.end();
 });
 
 app.post('/clearCart', (req, res) => {
-  cart.clearCart();
-  res.json(cart.getItems());
+  const updateCart = cart(req.session.shopItems, req.session.cart);
+  updateCart.clearCart();
+  // req.session.cart.clearCart();
+  res.end();
 });
 
 app.post('/getCartItems', (req, res) => {
-  res.json(cart.getItems());
+  const updateCart = cart(req.session.shopItems, req.session.cart);
+  // const updateCart = cart(req.session.cartItems);
+  // const updateCart = new Cart(req.session.shopItems, req.session.cartItems);
+  req.session.save();
+  res.json(updateCart.getItems());
 })
 
