@@ -24,22 +24,15 @@ export class CartComponent implements OnInit {
   }
 
   clearCart(): void {
-    this.cartHandler.clearCart();
-    this.getCartItems();
+    this.cartHandler.clearCart().subscribe(items => this.cartItems = items);
   }
 
-  addToCart(item: ShopItems): void;
-  
-  addToCart(item: number): void;
-  
-  addToCart(item: any){
-    this.cartHandler.addToCart(item).subscribe();
-    this.getCartItems();
+  addToCart(item: ShopItems): void {
+    this.cartHandler.addToCart(item).subscribe(items => this.cartItems = items);
   }
 
   removeOneFromCart(item: ShopItems): void {
-    this.cartHandler.removeOneFromCart(item).subscribe();
-    this.getCartItems();
+    this.cartHandler.removeOneFromCart(item).subscribe(items => this.cartItems = items)
   }
 
 }

@@ -16,16 +16,16 @@ export class CartHandlerService {
   private getCartUrl = 'api/getCartItems';
   private getTotalUrl = 'api/processOrder';
 
-  addToCart(item?: ShopItems): any {
-    return this.http.post(this.addToCartUrl, item);
+  addToCart(item?: ShopItems): Observable<ShopItems[]> {
+    return this.http.post<ShopItems[]>(this.addToCartUrl, item);
   }
   
-  removeOneFromCart(item?: ShopItems): any {
-    return this.http.post(this.removeOneFromCartUrl, item);
+  removeOneFromCart(item?: ShopItems): Observable<ShopItems[]> {
+    return this.http.post<ShopItems[]>(this.removeOneFromCartUrl, item);
   }
 
-  clearCart(): any {
-    return this.http.post(this.clearCartUrl, {});
+  clearCart(): Observable<ShopItems[]> {
+    return this.http.post<ShopItems[]>(this.clearCartUrl, {});
   }
 
   getCart(): Observable<ShopItems[]> {

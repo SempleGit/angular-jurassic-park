@@ -3,6 +3,9 @@ const port = 3000;
 
 const express = require('express');
 const session = require('express-session');
+const redis = require('redis')
+let RedisStore = require('connect-redis')(session)
+let redisClient = redis.createClient()
 const app = express();
 global.shopItems = require('./shopItems')();
 const cart = require('./cart');
@@ -16,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //setting up the session
 app.use(session({
+  store: new RedisStore({ client: redisClient }),
   secret: 'session secret',
   cookie: { maxAge: 1000 * 60 * 10 }, // Final number is how many minutes the session stays open, 10 is 10 minutes.
   saveUninitialized: true,
@@ -47,22 +51,22 @@ app.get('/characters/:id', (req, res) => {
 app.post('/addToCart', (req, res) => {
   const updateCart = cart(req.session.cart);
   req.session.cart = updateCart.addToCart(req.body);
-  res.end();
+  res.json(updateCart.getCartDetails());
+  // res.end();
 });
 
 app.post('/removeOneFromCart', (req, res) => {
   const updateCart = cart(req.session.cart);
-
   updateCart.removeOneFromCart(req.body);
-  // req.session.cart.removeOneFromCart(req.body);
-  res.end();
+  res.json(updateCart.getCartDetails());
+  // res.end();
 });
 
 app.post('/clearCart', (req, res) => {
   const updateCart = cart(req.session.cart);
   updateCart.clearCart();
-  // req.session.cart.clearCart();
-  res.end();
+  res.json(updateCart.getCartDetails());
+  // res.end();
 });
 
 app.post('/getCartItems', (req, res) => {
