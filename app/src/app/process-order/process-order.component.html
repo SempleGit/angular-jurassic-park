@@ -1,0 +1,8 @@
+<div class="container">
+  <ng-container *ngIf="total">
+    <h2>Thank you your order is complete!</h2>
+    <p>Total Payment: ${{total | number : '1.2'}}</p>
+  </ng-container>
+  <a routerLink="/main"><button class="btn btn-outline-primary">Return to store</button></a>
+</div>
+

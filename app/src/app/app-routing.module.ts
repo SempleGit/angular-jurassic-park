@@ -8,6 +8,7 @@ import { StoreComponent } from 'src/app/store/store.component';
 import { ShopItemDetailComponent } from 'src/app/shop-item-detail/shop-item-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from 'src/app/page-not-found/page-not-found.component';
+import { ProcessOrderComponent } from './process-order/process-order.component';
 
 const routes: Routes = [
   { path: "main", component: MainPageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "store", component: StoreComponent },
   { path: "cart", component: CartComponent },
   { path: "details/:id", component: ShopItemDetailComponent },
+  { path: "processOrder", component: ProcessOrderComponent },
   { path: "", redirectTo: "/splash", pathMatch: "full" }, //Sets the default page to direct to the splash screen page.
   { path: "**", component: PageNotFoundComponent }, //Any page that doesn't exist will route here.
 ];

@@ -5,5 +5,6 @@ export interface ShopItems {
   description: string;
   img: string;
   alt: string;
-  quantity?: number;  
+  quantity?: number; 
+  subtotal?: number;
 }

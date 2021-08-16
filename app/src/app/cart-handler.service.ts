@@ -14,23 +14,26 @@ export class CartHandlerService {
   private removeOneFromCartUrl = 'api/removeOneFromCart';
   private clearCartUrl = 'api/clearCart';
   private getCartUrl = 'api/getCartItems';
+  private getTotalUrl = 'api/processOrder';
 
-  addToCart(item?: ShopItems): void;
-  addToCart(item?: number): void;
-  addToCart(item?: any): void {
-    this.http.post(this.addToCartUrl, item).subscribe();
+  addToCart(item?: ShopItems): any {
+    return this.http.post(this.addToCartUrl, item);
   }
   
-  removeOneFromCart(item?: ShopItems): void {
-    this.http.post(this.removeOneFromCartUrl, item).subscribe();
+  removeOneFromCart(item?: ShopItems): any {
+    return this.http.post(this.removeOneFromCartUrl, item);
   }
 
-  clearCart(): void {
-    this.http.post(this.clearCartUrl, {}).subscribe();
+  clearCart(): any {
+    return this.http.post(this.clearCartUrl, {});
   }
 
   getCart(): Observable<ShopItems[]> {
     return this.http.post<ShopItems[]>(this.getCartUrl, {});
   }  
+
+  getTotal(): Observable<number> {
+    return this.http.post<number>(this.getTotalUrl, {});
+  }
 
 }

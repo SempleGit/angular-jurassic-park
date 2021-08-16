@@ -1,23 +1,24 @@
 <app-navigation [selectedLink]="link"></app-navigation>
 <div class="container shadow-lg p-3 mb-5 bg-body rounded">
   <h2>Shopping Cart</h2>
-  <ng-container *ngFor='let shopItem of cartItems'>
-    <div class="row">
-      <a routerLink="/details/{{shopItem.id}}">
-        <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
-        <p>{{shopItem.itemName}}</p>
-      </a>
-        <p>${{shopItem.price}}</p>
-        <div class="container">
-          <!-- <app-add-to-cart [item] = "shopItem"></app-add-to-cart> -->
-          <button class="btn btn-outline-primary" (click)="addToCart(shopItem)">Add</button>
-          <button class="btn btn-outline-primary" (click)="removeOneFromCart(shopItem)">Remove</button>
-          <!-- <ng-container *ngIf='shopItem.quantity'>
-            <p>Quantity: {{shopItem.quantity}}</p>
-          </ng-container> -->
-          <app-item-quantity [quantity] = "shopItem.quantity"></app-item-quantity>
-        </div>
-    </div>
+  <ng-container *ngIf="cartItems.length; else elseBlock">
+    <ng-container *ngFor='let shopItem of cartItems'>
+      <div class="row">
+        <a routerLink="/details/{{shopItem.id}}">
+          <img class="thumbnail" src={{shopItem.img}} alt={{shopItem.alt}}>
+          <p>{{shopItem.itemName}}</p>
+        </a>
+          <p>${{shopItem.price}}</p>
+          <div class="container">
+            <!-- <app-add-to-cart [item] = "shopItem"></app-add-to-cart> -->
+            <button class="btn btn-outline-primary" (click)="addToCart(shopItem)">Add</button>
+            <button class="btn btn-outline-primary" (click)="removeOneFromCart(shopItem)">Remove</button>
+            <app-item-quantity [quantity] = "shopItem.quantity"></app-item-quantity>
+          </div>
+          <p>Subtotal: ${{shopItem.subtotal | number:'1.2'}}</p>
+      </div>
+    </ng-container>
+    <a routerLink="/processOrder"><button class="btn btn-outline-secondary">Process Order</button></a>
   </ng-container>
-  <button (click)="clearCart()">Clear</button>
+  <ng-template #elseBlock>There is nothing in your cart, head to the <a routerLink="/store">Store</a> and grab some stuff!</ng-template>
 </div>

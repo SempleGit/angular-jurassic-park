@@ -33,12 +33,12 @@ export class CartComponent implements OnInit {
   addToCart(item: number): void;
   
   addToCart(item: any){
-    this.cartHandler.addToCart(item);
+    this.cartHandler.addToCart(item).subscribe();
     this.getCartItems();
   }
 
   removeOneFromCart(item: ShopItems): void {
-    this.cartHandler.removeOneFromCart(item);
+    this.cartHandler.removeOneFromCart(item).subscribe();
     this.getCartItems();
   }
 

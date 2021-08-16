@@ -18,6 +18,7 @@ import { CartComponent } from './cart/cart.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { RemoveFromCartComponent } from './remove-from-cart/remove-from-cart.component';
 import { ItemQuantityComponent } from './item-quantity/item-quantity.component';
+import { ProcessOrderComponent } from './process-order/process-order.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ItemQuantityComponent } from './item-quantity/item-quantity.component';
     CartComponent,
     AddToCartComponent,
     RemoveFromCartComponent,
-    ItemQuantityComponent
+    ItemQuantityComponent,
+    ProcessOrderComponent
   ],
   imports: [
     BrowserModule,

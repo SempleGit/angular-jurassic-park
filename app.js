@@ -4,7 +4,7 @@ const port = 3000;
 const express = require('express');
 const session = require('express-session');
 const app = express();
-const shopItems = require('./shopItems');
+global.shopItems = require('./shopItems')();
 const cart = require('./cart');
 const characters = require('./characters');
 
@@ -27,18 +27,13 @@ http.createServer(app).listen(port);
 app.get('/shopItems', (req, res) => {
   const sess = req.session;
   if (!sess.user) {
-    sess.shopItems = shopItems();
-    // sess.cartItems = [];
-    // sess.cart = require('./cart')(sess.shopItems);
     sess.user = 'Random User';
   }
-  console.log(req.session);
-  // req.session.save();
-  res.json(req.session.shopItems);
+  res.json(shopItems);
 });
 
 app.get('/shopItems/:id', (req, res) => {
-  res.json(req.session.shopItems.find(item => item.id === Number(req.params.id)) || {"itemName": "Item Not Found"});
+  res.json(shopItems.find(item => item.id === Number(req.params.id)) || {"itemName": "Item Not Found"});
 });
 
 app.get('/characters', (req, res) => {
@@ -50,13 +45,13 @@ app.get('/characters/:id', (req, res) => {
 });
 
 app.post('/addToCart', (req, res) => {
-  const updateCart = cart(req.session.shopItems, req.session.cart);
+  const updateCart = cart(req.session.cart);
   req.session.cart = updateCart.addToCart(req.body);
   res.end();
 });
 
 app.post('/removeOneFromCart', (req, res) => {
-  const updateCart = cart(req.session.shopItems, req.session.cart);
+  const updateCart = cart(req.session.cart);
 
   updateCart.removeOneFromCart(req.body);
   // req.session.cart.removeOneFromCart(req.body);
@@ -64,17 +59,20 @@ app.post('/removeOneFromCart', (req, res) => {
 });
 
 app.post('/clearCart', (req, res) => {
-  const updateCart = cart(req.session.shopItems, req.session.cart);
+  const updateCart = cart(req.session.cart);
   updateCart.clearCart();
   // req.session.cart.clearCart();
   res.end();
 });
 
 app.post('/getCartItems', (req, res) => {
-  const updateCart = cart(req.session.shopItems, req.session.cart);
-  // const updateCart = cart(req.session.cartItems);
-  // const updateCart = new Cart(req.session.shopItems, req.session.cartItems);
+  const updateCart = cart(req.session.cart);
   req.session.save();
-  res.json(updateCart.getItems());
+  res.json(updateCart.getCartDetails());
+})
+
+app.post('/processOrder', (req, res) => {
+  const updateCart = cart(req.session.cart);
+  res.json(updateCart.calculateTotal());
 })
 
