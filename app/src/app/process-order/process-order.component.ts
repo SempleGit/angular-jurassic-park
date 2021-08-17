@@ -15,8 +15,11 @@ export class ProcessOrderComponent implements OnInit {
   }
 
   processOrder(): void {
-    this.cartHandler.getTotal().subscribe(value => this.total = value);
-    this.cartHandler.clearCart().subscribe();
+    this.cartHandler.getTotal().subscribe(value => {
+      this.total = value
+      this.cartHandler.clearCart().subscribe();
+    });
+    
   }
 
 }
