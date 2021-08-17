@@ -9,8 +9,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class CharacterService {
 
   constructor(private http: HttpClient) { }
-  // private api = 'https://warm-reaches-88811.herokuapp.com';
-  private api = '/api';
+  private api = 'https://warm-reaches-88811.herokuapp.com';
+  // private api = '/api';
   
   private charactersUrl = `${this.api}/characters`;
 

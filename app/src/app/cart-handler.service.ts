@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 export class CartHandlerService {
 
   constructor(private http: HttpClient) { }
-  // private api = 'https://warm-reaches-88811.herokuapp.com';
-  private api = '/api';
+  private api = 'https://warm-reaches-88811.herokuapp.com';
+  // private api = '/api';
   
   private addToCartUrl = `${this.api}/addToCart`;
   private removeOneFromCartUrl = `${this.api}/removeOneFromCart`;
