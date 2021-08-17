@@ -10,9 +10,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ShopItemsService {
 
   constructor(private http: HttpClient) { }
+  private api = 'https://warm-reaches-88811.herokuapp.com';
 
-  // private shopItemsUrl = 'api/shopitems';
-  private shopItemsUrl = 'https://warm-reaches-88811.herokuapp.com/shopitems';
+  // private shopItemsUrl = `${this.api}/shopitems`;
+  private shopItemsUrl = `${this.api}/shopitems`;
 
   getShopItems(): Observable<ShopItems[]> {
     return this.http.get<ShopItems[]>(this.shopItemsUrl);

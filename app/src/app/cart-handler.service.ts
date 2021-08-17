@@ -10,11 +10,13 @@ import { Observable } from 'rxjs';
 export class CartHandlerService {
 
   constructor(private http: HttpClient) { }
-  private addToCartUrl = 'https://warm-reaches-88811.herokuapp.com/addToCart';
-  private removeOneFromCartUrl = 'https://warm-reaches-88811.herokuapp.com/removeOneFromCart';
-  private clearCartUrl = 'https://warm-reaches-88811.herokuapp.com/clearCart';
-  private getCartUrl = 'https://warm-reaches-88811.herokuapp.com/getCartItems';
-  private getTotalUrl = 'https://warm-reaches-88811.herokuapp.com/processOrder';
+  private api = 'https://warm-reaches-88811.herokuapp.com';
+  
+  private addToCartUrl = `${this.api}/addToCart`;
+  private removeOneFromCartUrl = `${this.api}/removeOneFromCart`;
+  private clearCartUrl = `${this.api}/clearCart`;
+  private getCartUrl = `${this.api}/getCartItems`;
+  private getTotalUrl = `${this.api}/processOrder`;
 
   addToCart(item?: ShopItems): Observable<ShopItems[]> {
     return this.http.post<ShopItems[]>(this.addToCartUrl, item);
