@@ -11,7 +11,8 @@ export class ShopItemsService {
 
   constructor(private http: HttpClient) { }
 
-  private shopItemsUrl = 'api/shopitems';
+  // private shopItemsUrl = 'api/shopitems';
+  private shopItemsUrl = 'https://warm-reaches-88811.herokuapp.com/shopitems';
 
   getShopItems(): Observable<ShopItems[]> {
     return this.http.get<ShopItems[]>(this.shopItemsUrl);

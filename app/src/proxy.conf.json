@@ -1,10 +1,9 @@
 {
-  "/api": {
-    "localtarget": "http://localhost:3000",
+  "https://warm-reaches-88811.herokuapp.com": {
     "target": "https://warm-reaches-88811.herokuapp.com",
     "secure": false,
     "pathRewrite": {
-      "^/api": ""
+      "^https://warm-reaches-88811.herokuapp.com": ""
     },
     "changeOrigin": true
   }

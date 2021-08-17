@@ -10,7 +10,8 @@ export class CharacterService {
 
   constructor(private http: HttpClient) { }
 
-  private charactersUrl = '/api/characters';
+  // private charactersUrl = '/api/characters';
+  private charactersUrl = 'https://warm-reaches-88811.herokuapp.com/characters';
 
   getCharacters(): Observable<Character[]> {
     return this.http.get<Character[]>(this.charactersUrl);
