@@ -10,6 +10,7 @@ const app = express();
 global.shopItems = require('./shopItems')();
 const cart = require('./cart');
 const characters = require('./characters');
+app.use(express.static('dist'));
 
 // For parsing application/json
 app.use(express.json());

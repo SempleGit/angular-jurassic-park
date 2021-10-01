@@ -19,5 +19,5 @@ export class AddToCartComponent implements OnInit {
   addToCart(): void {
     this.cartHandler.addToCart(this.item).subscribe();
   }
-
 }
+ 

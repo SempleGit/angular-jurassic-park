@@ -7,6 +7,7 @@ import { ShopItems } from 'src/app/shop-items';
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.css']
 })
+
 export class StoreComponent implements OnInit {
 
   link = 'store';
@@ -20,5 +21,4 @@ export class StoreComponent implements OnInit {
   getShopItems = (): void => {
     this.shopItemService.getShopItems().subscribe(shopItems => this.shopItems = shopItems);
   }
-
 }

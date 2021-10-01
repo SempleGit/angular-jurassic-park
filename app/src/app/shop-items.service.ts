@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ShopItems } from 'src/app/shop-items';
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,7 @@ export class ShopItemsService {
 
   constructor(private http: HttpClient) { }
   private api = 'https://warm-reaches-88811.herokuapp.com';
-  // private api = '/api';
 
-  // private shopItemsUrl = `${this.api}/shopitems`;
   private shopItemsUrl = `${this.api}/shopitems`;
 
   getShopItems(): Observable<ShopItems[]> {
